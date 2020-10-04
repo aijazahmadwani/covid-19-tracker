@@ -19,13 +19,26 @@ let app_data = [],
   formatedDates = [];
 
 // GET USERS COUNTRY CODE
-let country_code = geoplugin_countryCode();
+let country_code;
 let user_country;
-country_list.forEach((country) => {
-  if (country.code == country_code) {
-    user_country = country.name;
-  }
+async function getUserCountryCode() {
+  const response = await fetch("https://ipapi.co/json")
+  const data = await response.json();
+  return data.country_code;
+}
+
+getUserCountryCode().then(res => {
+  country_code = res;
+  country_list.forEach((country) => {
+    if (country.code == country_code) {
+      user_country = country.name;
+    }
+  });
+  fetchData(user_country);
 });
+
+
+
 
 /* ---------------------------------------------- */
 /*                     FETCH API                  */
@@ -48,8 +61,8 @@ function fetchData(country) {
   const api_fetch = async (country) => {
     await fetch(
       "https://api.covid19api.com/total/country/" +
-        country +
-        "/status/confirmed",
+      country +
+      "/status/confirmed",
       requestOptions
     )
       .then((res) => {
@@ -64,8 +77,8 @@ function fetchData(country) {
 
     await fetch(
       "https://api.covid19api.com/total/country/" +
-        country +
-        "/status/recovered",
+      country +
+      "/status/recovered",
       requestOptions
     )
       .then((res) => {
@@ -96,7 +109,7 @@ function fetchData(country) {
   api_fetch(country);
 }
 
-fetchData(user_country);
+
 
 // UPDATE UI FUNCTION
 function updateUI() {
