@@ -14,7 +14,7 @@ const state_total_cases_element = document.querySelector(".state .total-cases .v
 const state_recovered_element = document.querySelector(".state .recovered .value");
 const state_deaths_element = document.querySelector(".state .deaths .value");
 const state_active_element = document.querySelector(".state .active .value");
-const district_name = document.querySelector(".district .title");
+const district_name = document.querySelector(".district-title");
 const district_total_cases = document.querySelector(".district-cases");
 
 const ctx = document.getElementById("axes_line_chart").getContext("2d");

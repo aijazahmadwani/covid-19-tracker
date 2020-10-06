@@ -171,3 +171,28 @@ html{
     background: #FFF;
   }
 
+
+footer{
+    max-width: 1200px;
+    height: 60px;
+
+    margin: 0 auto;
+    background-color: #4E4F50;
+}
+
+.footer-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.copyright p{
+    color: #FFF;
+}
