@@ -20,29 +20,9 @@
                 <img src="./assets/img/logo.png" width="40" height="35" class="d-inline-block align-top" alt="logo">
                 Covid-19 Tracker
             </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
         </nav>
         <div class="row stats text-center">
-            <div class="col col-md-3 col-sm-6">
+            <div class="col col-md-3 col-sm-6 col-12">
                 <div class="country">
                     <div class="name">Loading...</div>
                     <div>
@@ -87,7 +67,70 @@
                 <canvas id="axes_line_chart"></canvas>
             </div>
         </div>
-        
+        <div class="row stats text-center state">
+            <div class="col col-md-3 col-sm-6 col-12">
+                <div class="country">
+                    <div class="name">Loading...</div>
+                    <!-- <div>
+                        <button type="button" class="btn btn-outline-light change-country">Change</button>
+                    </div> -->
+                    <!-- <div class="search-country hide">
+                        <div class="search-box">
+                            <input type="text" id="search-input" placeholder="Search Country..." />
+                            <img class="close" src="./assets/img/close.svg" alt="" />
+                        </div>
+                        <div class="country-list">
+                            <ul id="countries">
+
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6">
+
+                <div class="total-cases">
+                    <div class="title">Total Cases</div>
+                    <div class="value">0</div>
+                    <!-- <div class="new-value">+0</div> -->
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6">
+
+                <div class="active">
+                    <div class="title">Active</div>
+                    <div class="value">0</div>
+                    <!-- <div class="new-value">+0</div> -->
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6">
+                <div class="recovered">
+                    <div class="title">Recovered</div>
+                    <div class="value">0</div>
+                    <!-- <div class="new-value">+0</div> -->
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6">
+                <div class="deaths">
+                    <div class="title">Deaths</div>
+                    <div class="value">0</div>
+                    <!-- <div class="new-value">+0</div> -->
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col col-md-3 col-sm-6">
+                <div class="district">
+                    <div class="title">Loading...</div>
+                    <div class="district-cases">0</div>
+                    <!-- <div class="new-value">+0</div> -->
+                </div>
+            </div>
+            <!-- <div class="chart">
+                <canvas id="axes_line_chart"></canvas>
+            </div> -->
+        </div>
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

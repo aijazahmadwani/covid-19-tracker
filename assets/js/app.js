@@ -8,7 +8,17 @@ const new_recovered_element = document.querySelector(".recovered .new-value");
 const deaths_element = document.querySelector(".deaths .value");
 const new_deaths_element = document.querySelector(".deaths .new-value");
 
+// STATE SPECIFIC
+const state_name_element = document.querySelector(".state .name");
+const state_total_cases_element = document.querySelector(".state .total-cases .value");
+const state_recovered_element = document.querySelector(".state .recovered .value");
+const state_deaths_element = document.querySelector(".state .deaths .value");
+const state_active_element = document.querySelector(".state .active .value");
+const district_name = document.querySelector(".district .title");
+const district_total_cases = document.querySelector(".district-cases");
+
 const ctx = document.getElementById("axes_line_chart").getContext("2d");
+
 
 // APP VARIABLES
 let app_data = [],
@@ -207,3 +217,43 @@ function formatDate(dateString) {
 
   return `${date.getDate()} ${monthsNames[date.getMonth() - 1]}`;
 }
+
+
+// STATE SPECIFIC 
+
+
+// GET USER REGION DETAILS
+async function getUserRegionCode() {
+  const response = await fetch("https://ipapi.co/json");
+  const data = await response.json();
+  return data;
+}
+getUserRegionCode().then(res => {
+  const district = res.city;
+  const stateCode = 'IN-' + res.region_code;
+  getData().then(res => {
+    res.forEach((state) => {
+      if (state.id == stateCode) {
+        state_name_element.innerHTML = state.state;
+        state_total_cases_element.innerHTML = state.confirmed;
+        state_recovered_element.innerHTML = state.recovered;
+        state_deaths_element.innerHTML = state.deaths;
+        state_active_element.innerHTML = state.active;
+        state.districtData.forEach((dist) => {
+          if (dist.id == district) {
+            district_name.innerHTML = dist.id;
+            district_total_cases.innerHTML = dist.confirmed;
+          }
+        });
+      }
+    });
+  });
+})
+
+async function getData() {
+  const response = await fetch('https://api.covidindiatracker.com/state_data.json');
+  const data = await response.json();
+  return data
+}
+
+

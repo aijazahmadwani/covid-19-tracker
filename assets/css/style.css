@@ -38,7 +38,7 @@ html{
 }
 
 .name{
-    font-size: 2.2em;
+    font-size: 1.5em;
     color: #fff;
     font-weight: bold;
 }
@@ -47,12 +47,21 @@ html{
     cursor: pointer;
 }
 
-.title{
+.title, .district{
     font-size: 1.3em;
+}
+.district-cases{
+    font-size: 2em;
+    font-weight: bold;
 }
 .total-cases .value{
     font-size: 2em;
     font-weight: bold;
+}
+.active .value{
+    font-size: 2em;
+    font-weight: bold;
+    color:#00ff00;
 }
 .recovered .value{
     font-size: 2em;
@@ -161,3 +170,4 @@ html{
   .country-list::-webkit-scrollbar-thumb:hover {
     background: #FFF;
   }
+
